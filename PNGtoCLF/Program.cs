@@ -73,6 +73,5 @@ yscale: " + img.Height + @"
                 Console.ReadLine();
             }
         }
-
     }
 }
