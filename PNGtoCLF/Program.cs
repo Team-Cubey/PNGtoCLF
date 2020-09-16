@@ -19,6 +19,8 @@ namespace PNGtoCLF
         private static bool pngpathe;
         private static bool mapnamee;
         private static bool mapauthore;
+        private static bool colorInArray;
+
         public class aOptions
         {
             [Option('v', "verbose", Required = false, HelpText = "Set output to verbose messages.")]
@@ -113,7 +115,7 @@ namespace PNGtoCLF
                 P.nopath = path;
                 path = currentloc + "\\" + path;
             }
-            if (P.nopath.Contains(".png "))
+            if (path.Contains(".png"))
             {
                 string name;
                 string creator;
@@ -138,8 +140,7 @@ namespace PNGtoCLF
                 var img = new Bitmap(System.Drawing.Image.FromFile(path)); // grab selected image
 
                 // create basic level structure
-                string level = @"
-CLF 0.1
+                string level = @"CLF 0.1
 
 [META]
 name: '" + name + @"'
@@ -148,16 +149,81 @@ xscale: " + img.Width + @"
 yscale: " + img.Height + @"
 
 [LEVEL]";
+                Color[] colors = { 
+                    Color.FromArgb(255, 0, 0, 0), // land
+                    Color.FromArgb(255, 255, 0, 255),  // cubey
+                    Color.FromArgb(255, 0, 100, 255), // key
+                    Color.FromArgb(255, 255, 255, 0),  // door-1
+                    Color.FromArgb(255, 255, 0, 0), // killcube-vertical  
+                    Color.FromArgb(255, 200, 0, 0), // killcube-horizontal
+                    Color.FromArgb(255, 0, 255, 255), // evilcube-reverser
+                    Color.FromArgb(255, 0, 255, 0), // flower
+                    Color.FromArgb(255, 1, 0, 0), // tutorial dialog 1
+                    Color.FromArgb(255, 2, 0, 0), // tutorial dialog 2
+                    Color.FromArgb(255, 3, 0, 0), // tutorial dialog 3
+                    Color.FromArgb(255, 4, 0, 0), // tutorial dialog 4
+                    Color.FromArgb(255, 5, 0, 0), // tutorial dialog 5
+                    Color.FromArgb(255, 6, 0, 0), // tutorial dialog 6
+                    Color.FromArgb(255, 7, 0, 0), // tutorial dialog 7
+                    Color.FromArgb(255, 8, 0, 0), // tutorial dialog 8
+                    Color.FromArgb(255, 100, 200, 100), // jumppad
+                    Color.FromArgb(255, 200, 0, 50), // evilkey
+                    Color.FromArgb(255, 0, 200, 0), // flowershoot
+                    Color.FromArgb(255, 100, 100, 100), // 4d-shooter
+                    Color.FromArgb(255, 50, 50, 50), // land-nocol
+                    Color.FromArgb(255, 255, 255, 255), // barrier
+                    Color.FromArgb(255, 200, 255, 255), // flag 
+                    Color.FromArgb(255, 72, 0, 0), // gate-red
+                    Color.FromArgb(255, 172, 0, 0), // gate-red-key
+                    Color.FromArgb(255, 0, 72, 0), // gate-green
+                    Color.FromArgb(255, 0, 172, 0), // gate-green-key
+                    Color.FromArgb(255, 0, 0, 72), // gate-blue
+                    Color.FromArgb(255, 0, 0, 172), // gate-blue-key
+                    Color.FromArgb(255, 255, 150, 255), // movingland
+                    Color.FromArgb(255, 234, 123, 123), // meta display
+                    Color.FromArgb(255, 255, 155, 0), // teleportal, deprecated
+                    Color.FromArgb(255, 0, 10, 0), // mappack1-end
+                    Color.FromArgb(255, 0, 25, 25) // land-reverser
+                };
+
                 for (int x = 0; x < img.Width; x++) // loop through all the X pixels
                 {
                     for (int y = 0; y < img.Height; y++) // loop through all the Y pixels
                     {
                         Color pixelColor = img.GetPixel(x, y); // gets the colour of the pixel/tile
+                       
                         if (pixelColor.A > 0) // dont want alphas
                         {
-                            level += "\n "; // newlines
+                            colorInArray = false;
 
-                            level += x + ", " + y + ", 0, " + pixelColor.R + ", " + pixelColor.G + ", " + pixelColor.B; // adds tile
+                            int finalid = -1;
+                            int id = 0;
+                            foreach (Color colorMapping in colors)
+                            {
+                                if (pixelColor == colorMapping)
+                                {
+                                    colorInArray = true;
+                                    finalid = id;
+                                    break;
+                                }
+                                id += 1;
+                            }
+
+                            if (colorInArray)
+                            {
+                                level += "\n"; // newlines
+
+                                level += x + "," + y + ",0," + finalid; // adds tile
+                            }
+                            else
+                            {
+                                string pc = "" + (pixelColor.R) + " " + (pixelColor.G) + " " + (pixelColor.B);
+                                Console.WriteLine("The tile " + x + ":" + (img.Height - y - 1) + " has an invalid tile of color '" + pc);
+                            }
+
+                            //level += "\n "; // newlines
+                            //
+                            //level += x + ", " + y + ", 0, " + pixelColor.R + ", " + pixelColor.G + ", " + pixelColor.B; // adds tile
                         }
                     }
                 }
