@@ -62,7 +62,6 @@ yscale: " + img.Height + @"
 
                 Console.WriteLine("\nConverting PNG..."); // alert user we're converting 
 
-
                 string exportto = path.Replace(".png", "") + ".clf"; // get export location
 
                 File.WriteAllText(exportto, level); // export
