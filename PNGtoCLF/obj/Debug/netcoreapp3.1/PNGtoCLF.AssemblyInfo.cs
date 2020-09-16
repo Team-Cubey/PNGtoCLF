@@ -13,6 +13,7 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("PNGtoCLF")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyCopyrightAttribute("Team Cubey 2020")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("PNGtoCLF")]
