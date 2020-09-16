@@ -11,7 +11,10 @@ namespace PNGtoCLF
 
         static void Main(string[] args)
         {
+            Console.Title = "PNGtoCLF";
+
             Program P = new Program(); // grab program
+            Console.WriteLine("PNGtoCLF 1.0 - CLF FORMAT 0.1\n(C) Team Cubey 2020\n\n");
             Console.WriteLine("Enter PNG location"); // ask for png location
             string path = Console.ReadLine(); // grab the path they wanted
             if (path.Contains(@":\"))
