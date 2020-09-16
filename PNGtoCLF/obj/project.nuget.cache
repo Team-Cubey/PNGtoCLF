@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "jFQAcylD92j21IOBLcAuB/iHiqfXXdei0W5Z39Y7YbgUHvFD356YNQB8taJ1lG7EHdugpD+Fs1DMpVtOVrcQOQ==",
+  "dgSpecHash": "UTPuJPRjdq/NR7qWobu7kaFr8ZhKp993FOb93kavsmscpKNXomvPughPJpxi50kZtDoSRZjMwwMqpSzg0EE8BQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\hubzi\\source\\repos\\PNGtoCLF\\PNGtoCLF\\PNGtoCLF.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\hubzi\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\hubzi\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\hubzi\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }
