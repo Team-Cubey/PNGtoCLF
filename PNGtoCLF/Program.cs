@@ -11,10 +11,10 @@ namespace PNGtoCLF
 
         static void Main(string[] args)
         {
-            Console.Title = "PNGtoCLF";
+            Console.Title = "PNGtoCLF"; // set title
 
             Program P = new Program(); // grab program
-            Console.WriteLine("PNGtoCLF 1.0 - CLF FORMAT 0.1\n(C) Team Cubey 2020\n\n");
+            Console.WriteLine("PNGtoCLF 1.0 - CLF FORMAT 0.1\n(C) Team Cubey 2020\n\n"); // copyright
             Console.WriteLine("Enter PNG location"); // ask for png location
             string path = Console.ReadLine(); // grab the path they wanted
             if (path.Contains(@":\"))
@@ -51,7 +51,7 @@ yscale: " + img.Height + @"
                     for (int y = 0; y < img.Height; y++) // loop through all the Y pixels
                     {
                         Color pixelColor = img.GetPixel(x, y); // gets the colour of the pixel/tile
-                        if (pixelColor.A > 0)
+                        if (pixelColor.A > 0) // dont want alphas
                         {
                             level += "\n"; // newlines
 
