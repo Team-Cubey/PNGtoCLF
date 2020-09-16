@@ -42,8 +42,21 @@ creator: '" + creator + @"'
 xscale: " + img.Width + @"
 yscale: " + img.Height + @"
 
-[LEVEL]
-";
+[LEVEL]";
+                for (int x = 0; x < img.Width; x++) // loop through all the X pixels
+                {
+                    for (int y = 0; y < img.Height; y++) // loop through all the Y pixels
+                    {
+                        Color pixelColor = img.GetPixel(x, y); // gets the colour of the pixel/tile
+                        if (pixelColor.A > 0)
+                        {
+                            level += "\n"; // newlines
+
+                            level += x + "," + y + ",0," + pixelColor.R + "," + pixelColor.G + "," + pixelColor.B; // adds tile
+                        }
+                    }
+                }
+
                 Console.WriteLine("\nConverting PNG..."); // alert user we're converting 
 
 
