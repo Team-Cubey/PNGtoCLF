@@ -92,7 +92,7 @@ namespace PNGtoCLF
 
             Program P = new Program(); // grab program
 
-            Console.WriteLine("PNGtoCLF 1.2 - CLF FORMAT 0.2\n(C) Team Cubey 2020\n\n"); // copyright
+            Console.WriteLine("PNGtoCLF 1.2 - CLF FORMAT 0.3 Team Cubey 2020\n\n"); // copyright
             string path;
             if (!pngpathe)
             {
@@ -104,7 +104,7 @@ namespace PNGtoCLF
                 path = pngpath;
             }
 
-            if (path.Contains(@":\"))
+            if (path.Contains(@":"))
             {
                 path = path; // if the path is absolute we'll just set up our variables like usual
                 P.nopath = path;
@@ -140,7 +140,7 @@ namespace PNGtoCLF
                 var img = new Bitmap(System.Drawing.Image.FromFile(path)); // grab selected image
 
                 // create basic level structure
-                string level = @"CLF 0.2
+                string level = @"CLF 0.3
 
 [META]
 name: '" + name + @"'
@@ -183,7 +183,9 @@ yscale: " + img.Height + @"
                     Color.FromArgb(255, 234, 123, 123), // meta display
                     Color.FromArgb(255, 255, 155, 0), // teleportal, deprecated
                     Color.FromArgb(255, 0, 10, 0), // mappack1-end
-                    Color.FromArgb(255, 0, 25, 25) // land-reverser
+                    Color.FromArgb(255, 0, 25, 25), // land-reverser
+                    Color.FromArgb(255, 0, 69, 255), // heart
+                    Color.FromArgb(255, 255, 69, 0) // evilheart
                 };
 
                 for (int x = 0; x < img.Width; x++) // loop through all the X pixels
