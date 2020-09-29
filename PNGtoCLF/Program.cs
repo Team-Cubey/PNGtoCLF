@@ -104,7 +104,7 @@ namespace PNGtoCLF
                 path = pngpath;
             }
 
-            if (path.Contains(@":"))
+            if (path.Contains(@":\"))
             {
                 path = path; // if the path is absolute we'll just set up our variables like usual
                 P.nopath = path;
@@ -149,7 +149,7 @@ xscale: " + img.Width + @"
 yscale: " + img.Height + @"
 
 [LEVEL]";
-                Color[] colors = { 
+                Color[] colors = {
                     Color.FromArgb(255, 0, 0, 0), // land
                     Color.FromArgb(255, 255, 0, 255),  // cubey
                     Color.FromArgb(255, 0, 100, 255), // key
@@ -185,7 +185,8 @@ yscale: " + img.Height + @"
                     Color.FromArgb(255, 0, 10, 0), // mappack1-end
                     Color.FromArgb(255, 0, 25, 25), // land-reverser
                     Color.FromArgb(255, 0, 69, 255), // heart
-                    Color.FromArgb(255, 255, 69, 0) // evilheart
+                    Color.FromArgb(255, 255, 69, 0), // evilheart
+                    Color.FromArgb(255, 90, 20, 90)
                 };
 
                 for (int x = 0; x < img.Width; x++) // loop through all the X pixels
@@ -232,7 +233,7 @@ yscale: " + img.Height + @"
 
                 Console.WriteLine("\nConverting PNG..."); // alert user we're converting 
 
-                string exportto = path.Replace(".png ", "") + ".clf "; // get export location
+                string exportto = path.Replace(".png", "") + ".clf "; // get export location
 
                 File.WriteAllText(exportto, level); // export
                 Console.WriteLine("\nExported to " + exportto); // alert user
