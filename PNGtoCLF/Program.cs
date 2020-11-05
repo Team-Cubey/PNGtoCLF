@@ -111,7 +111,7 @@ namespace PNGtoCLF
             }
             else
             {
-                string currentloc = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location); // if the path isn't absolute we'll find out the absolute path, also save the filename.
+                string currentloc = Directory.GetCurrentDirectory()); // if the path isn't absolute we'll find out the absolute path, also save the filename.
                 P.nopath = path;
                 path = currentloc + "\\" + path;
             }
