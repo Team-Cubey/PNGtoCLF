@@ -165,7 +165,7 @@ yscale: " + img.Height + @"
                     Color.FromArgb(255, 5, 0, 0), // tutorial dialog 5
                     Color.FromArgb(255, 6, 0, 0), // tutorial dialog 6
                     Color.FromArgb(255, 7, 0, 0), // tutorial dialog 7
-                    Color.FromArgb(255, 8, 0, 0), // tutorial dialog 8
+                    Color.FromArgb(255, 8, 0, 0), // tutorial dialog 
                     Color.FromArgb(255, 100, 200, 100), // jumppad
                     Color.FromArgb(255, 200, 0, 50), // evilkey
                     Color.FromArgb(255, 0, 200, 0), // flowershoot
@@ -186,7 +186,8 @@ yscale: " + img.Height + @"
                     Color.FromArgb(255, 0, 25, 25), // land-reverser
                     Color.FromArgb(255, 0, 69, 255), // heart
                     Color.FromArgb(255, 255, 69, 0), // evilheart
-                    Color.FromArgb(255, 90, 20, 90)
+                    Color.FromArgb(255, 90, 20, 90),
+                    Color.FromArgb(255, 9, 0, 0), // tutorial dialog 9
                 };
 
                 for (int x = 0; x < img.Width; x++) // loop through all the X pixels
