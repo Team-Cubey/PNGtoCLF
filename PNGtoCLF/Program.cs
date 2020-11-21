@@ -92,7 +92,7 @@ namespace PNGtoCLF
 
             Program P = new Program(); // grab program
 
-            Console.WriteLine("PNGtoCLF 1.2 - CLF FORMAT 0.3 Team Cubey 2020\n\n"); // copyright
+            Console.WriteLine("PNGtoCLF 1.2.4 - CLF FORMAT 0.3.1 | Team Cubey 2020\n\n"); // copyright
             string path;
             if (!pngpathe)
             {
@@ -140,7 +140,7 @@ namespace PNGtoCLF
                 var img = new Bitmap(System.Drawing.Image.FromFile(path)); // grab selected image
 
                 // create basic level structure
-                string level = @"CLF 0.3
+                string level = @"CLF 0.3.1
 
 [META]
 name: '" + name + @"'
