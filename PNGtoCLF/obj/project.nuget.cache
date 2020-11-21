@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "I6TZTPTSO+Ce7P9egqwG6uXekYtVRLW5ODwKngs1JswH20caxYFB55wXuS4mkxPYh/1CNrHH9puGO7zIrlqSVw==",
+  "dgSpecHash": "c8qtDHvZ1f/h0D/dzmyPwdu6mmzqnjafnSdxTIokmwGTXjOOkAWzeZIa5rOslgdpX7NYD4a/z+bZkg8dZaAAew==",
   "success": true,
   "projectFilePath": "C:\\Users\\hubzi\\source\\repos\\PNGtoCLF\\PNGtoCLF\\PNGtoCLF.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hubzi\\.nuget\\packages\\commandlineparser\\2.8.0\\commandlineparser.2.8.0.nupkg.sha512",
-    "C:\\Users\\hubzi\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
-    "C:\\Users\\hubzi\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
-    "C:\\Users\\hubzi\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512"
+    "C:\\Users\\hubzi\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\hubzi\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\hubzi\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }
