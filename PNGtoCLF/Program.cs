@@ -111,7 +111,7 @@ namespace PNGtoCLF
             }
             else
             {
-                string currentloc = Directory.GetCurrentDirectory()); // if the path isn't absolute we'll find out the absolute path, also save the filename.
+                string currentloc = Directory.GetCurrentDirectory(); // if the path isn't absolute we'll find out the absolute path, also save the filename.
                 P.nopath = path;
                 path = currentloc + "\\" + path;
             }
@@ -187,7 +187,7 @@ yscale: " + img.Height + @"
                     Color.FromArgb(255, 0, 69, 255), // heart
                     Color.FromArgb(255, 255, 69, 0), // evilheart
                     Color.FromArgb(255, 90, 20, 90),
-                    Color.FromArgb(255, 9, 0, 0), // tutorial dialog 9
+                    Color.FromArgb(255, 9, 0, 0) // tutorial dialog 9
                 };
 
                 for (int x = 0; x < img.Width; x++) // loop through all the X pixels
